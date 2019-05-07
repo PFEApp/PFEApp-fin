@@ -31,7 +31,7 @@ import com.example.iread.options.SettingActivity;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-public class HomeActivity extends BaseActivity implements ProfilePageFragment.OnAddClicklistener, BlankFragment.OnFriendClicklistener {
+public class HomeActivity extends BaseActivity implements NewsPageFragment.OnQuizClickListener,ProfilePageFragment.OnAddClicklistener, BlankFragment.OnFriendClicklistener {
 
 
 
@@ -136,11 +136,10 @@ public class HomeActivity extends BaseActivity implements ProfilePageFragment.On
 
 
 
-    ///////////////
-    /*
+
     @Override
     public void OnStart1Click(View view) {
         startActivity(new Intent(this, SettingActivity.class));
     }
-    */
+
 }

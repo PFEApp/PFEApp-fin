@@ -20,7 +20,7 @@ public class NewsPageFragment extends Fragment {
         return (new NewsPageFragment());
     }
 
-    /*
+
     public  interface  OnQuizClickListener{
         void OnStart1Click(View view);
         void OnStart2Click(View view);
@@ -34,16 +34,16 @@ public class NewsPageFragment extends Fragment {
         void OnLire5Click(View view);
     }
     private NewsPageFragment.OnQuizClickListener addCalback;
-    */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View result = inflater.inflate(R.layout.fragment_news_page, container, false);
-        /*result.findViewById(R.id.defi_1).findViewById(R.id.defi_start).setOnClickListener(new View.OnClickListener() {
+        result.findViewById(R.id.defi_1).findViewById(R.id.defi_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 addCalback.OnStart1Click(v);
             }
-        });*/
+        });
 
 
 
@@ -56,5 +56,17 @@ public class NewsPageFragment extends Fragment {
 
 
         return result;
+    }
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        this.createCallbackToParentActivity();
+    }
+
+    private void createCallbackToParentActivity(){
+        try{
+            addCalback = (NewsPageFragment.OnQuizClickListener) getActivity();
+        } catch (ClassCastException e) {
+            throw new ClassCastException(e.toString()+ " must implement OnButtonClickedListener");        }
     }
 }
