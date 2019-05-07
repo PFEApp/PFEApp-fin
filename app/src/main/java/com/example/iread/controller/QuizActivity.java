@@ -63,6 +63,7 @@ public class QuizActivity extends AppCompatActivity {
                     btn3.setText(question.getOpt3());
                     btn4.setText(question.getOpt4());
 
+
                     btn1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
